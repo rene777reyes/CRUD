@@ -1,0 +1,18 @@
+body{
+    background-color: antiquewhite;
+}
+footer {
+    text-align: center;
+}
+
+textarea.textBox {
+    width: 800px;
+    height: 150px;
+    padding: 10px;
+    resize: vertical;
+}
+
+a {
+    color: rgb(211, 63, 63);
+}
+

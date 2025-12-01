@@ -1,0 +1,56 @@
+<%- include("partials/head.ejs") %>
+    <title>Edit Author</title>
+</head>
+<body class="text-center">
+    <h1>Updating Author Data</h1>
+
+    <form method="POST" action="/author/edit">
+
+      <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
+
+      First Name:
+      <input type="text" name="fn" value="<%=authorInfo[0].firstName%>">
+      <br>
+
+      Last Name:
+      <input type="text" name="ln" value="<%=authorInfo[0].lastName%>">
+      <br>
+      
+      Date of Birth:
+      <input type="date" name="bd"  value="<%=authorInfo[0].dobISO%>">
+      <br>
+
+      Date of Death: 
+      <input type="date" name="dd" value="<%=authorInfo[0].dodISO%>"> <br><br>
+      Birth Place: 
+      <input type="text" name="bp" value="<%=authorInfo[0].country%>">
+
+      Sex: 
+      <select name="sex">
+        <option value="M"
+        <% if (authorInfo[0].sex == "M") { %>
+          selected
+        <% } %>
+        
+        > Male </option>
+
+        <option value="F"
+        <% if (authorInfo[0].sex == "F") { %>
+            selected
+        <% } %>
+        
+        >Female </option>
+      </select><br><br>
+
+      Profession: <input type="text" name="prof" value="<%=authorInfo[0].profession%>"><br><br>
+      Portrait URL: <br> <textarea class="textBox" name="port"> <%=authorInfo[0].portrait%></textarea><br>
+      Bio: <br><textarea class="textBox" name="bio"><%=authorInfo[0].biography%></textarea> <br><br>
+      
+      <button>Update Author</button>
+
+    </form>   
+
+    <%- include("partials/footer.ejs") %> 
+    
+</body>
+</html>
